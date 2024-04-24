@@ -1,7 +1,10 @@
+
+
 public class Cliente {
     
-    public int nCliente;
-    public String nome;
-    public int mesa;
+    private int numeroMesa;
 
+    public Cliente(int numeroMesa) {
+        this.numeroMesa = numeroMesa;
+    }
 }
