@@ -10,8 +10,9 @@ import models.Pedido;
 
 public class principal {
 
+    //Criação do método principal
     public static void main(String[] args) {
-     
+     //Menu do sistema
         System.out.println("++++++++++++++++++++++++++++++++++\n");
         System.out.println("Sistema de controle de restaurante\n");
         System.out.println("Selecione a operação");
@@ -28,9 +29,11 @@ public class principal {
         System.out.println("K: Acessar arquivos\n");
         System.out.println("++++++++++++++++++++++++++++++++++\n");
 
+        //Seletor de alternativa
         Scanner scanner = new Scanner(System.in);
         String option = scanner.nextLine();
 
+        //Código pra chamar os métodos presentes nas classes (métodos ainda por fazer)
         switch (option) {
             case "A":
                 Cliente.cliente();
