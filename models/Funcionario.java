@@ -7,13 +7,13 @@ public class Funcionario {
     public String documento; // Documento do funcionario.
     public Double salario; // Salario do funcionario.
     
-// Construtor da calsse.
-    public Funcionario(int idFuncionario, String nome, String documento, double salario, String posicao) {
+// Construtor da classe.
+    public Funcionario(int idFuncionario, String nome, String documento, Double salario, String posicao) {
         this.idFuncionario = idFuncionario;
-            this.nome = nome;
-                this.documento = documento;
-                    this.salario = salario;
-                        this.posicao = posicao;
+        this.nome = nome;
+        this.documento = documento;
+        this.salario = salario;
+        this.posicao = posicao;
     }
 
   //Metodos para acessar os atributos.  
@@ -36,5 +36,4 @@ public class Funcionario {
     public String getPosicao() {
         return posicao;
     }
-    
 }

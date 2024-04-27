@@ -36,19 +36,29 @@ public class principal {
         //Código pra chamar os métodos presentes nas classes (métodos ainda por fazer)
         switch (option) {
             case "A":
-                Cliente.cliente();
+                System.out.println("Escreva a mesa a ocupar:\n");
+                int numeroMesa = scanner.nextInt();
+                Cliente cliente = new Cliente(numeroMesa);
                 break;
 
             case "B":
+                System.out.println("Escreva o Id do prato seguido pela quantidade (pode selecionar mais 3 vezes):\n");
+                //a fazer
                 Pedido.pedido();
                 break;
 
             case "C":
-                Pedido.entregar();
+                System.out.println("Escreva o Id do pedido a ser entregue:\n");
+                int idPedido = scanner.nextInt();
+                Pedido.entregar(idPedido);
                 break;
 
             case "D":
-                Cliente.pagar();
+                System.out.println("Escreva a mesa que realizará o pagamento e o valor coletado: \n");
+                int idPedidoPagto = scanner.nextInt();
+                Double valor = scanner.nextDouble();
+                //esse método existe na classe pedido, mas não funciona pois tem que fazer uma referência estática a um campo não estático, precisamos implementar uma database de pedidos e conectar
+                Pedido.pagar(idPedidoPagto, valor);
                 break;
 
             case "E":
@@ -56,7 +66,13 @@ public class principal {
                 break;
 
             case "F":
-                Funcionario.funcionario();
+                System.out.println("Digite o Id, Nome, CPF, Salário e Posição do funcionário");
+                int idFuncionario = scanner.nextInt();
+                String nome = scanner.nextLine();
+                String documento = scanner.nextLine();
+                Double salario = scanner.nextDouble();
+                String posicao = scanner.nextLine();
+                Funcionario funcionario = new Funcionario(idFuncionario, nome, documento, salario, posicao);
                 break;
 
             case "G":
