@@ -50,6 +50,7 @@ public class principal {
             case "C":
                 System.out.println("Escreva o Id do pedido a ser entregue:\n");
                 int idPedido = scanner.nextInt();
+                //talvez precise de código pra reconhecer a instância correta a partir do idPedido, terminar o ArrayList ou usar outro método de organização
                 Pedido.entregar(idPedido);
                 break;
 
@@ -62,7 +63,12 @@ public class principal {
                 break;
 
             case "E":
-                Cardapio.registrarPrato();
+                System.out.println("Digite o id, nome e preço do novo prato: ");
+                int idPrato = scanner.nextInt();
+                String nomePrato = scanner.nextLine();
+                Double precoPrato = scanner.nextDouble();
+                //não sei como isso vai ficar com a lista, mas esse código é só pra ter uma ideia
+                Cardapio prato = new Cardapio();
                 break;
 
             case "F":
@@ -76,19 +82,32 @@ public class principal {
                 break;
 
             case "G":
-                Funcionario.baterPonto();
+                System.out.println("Digite o id do funcionário para começar/terminar o turno: ");
+                int idFuncionarioPonto = scanner.nextInt();
+                // mesmo problema do caso D e E, precisamos de alguma instância de funcionário mas não podemos colocar diretamente no código, acho que precisaremos de uma database mesmo
+                Funcionario.baterPonto(idFuncionarioPonto);
                 break;
 
             case "H":
-                Funcionario.pagarSalario();
+                System.out.println("Digite o id do Funcionário para realizar o pagamento: ");
+                int idFuncionarioPagar = scanner.nextInt();
+                //também necessita database
+                Funcionario.pagarSalario(idFuncionarioPagar);
                 break;
 
             case "I":
-                Funcionario.aumento();
+            System.out.println("Digite o id do Funcionário e o novo valor do salário: ");
+            int idFuncionarioAumento = scanner.nextInt();
+            Double valorAumento = scanner.nextDouble();
+            //também necessita database
+            Funcionario.aumento(idFuncionarioAumento, valorAumento);
                 break;
 
             case "J":
-                Funcionario.Demitir();
+                System.out.println("Digite o id do Funcionário para realizar a demissão: ");
+                int idFuncionarioDemissao = scanner.nextInt();
+                //também necessita database
+                Funcionario.Demitir(idFuncionarioDemissao);
                 break;
 
             case "K":

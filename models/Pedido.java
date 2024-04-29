@@ -24,7 +24,6 @@ public class Pedido {
         this.itens = new ArrayList<>(); 
     }
 
-    //talvez precise de código pra reconhecer a instância correta a partir do idPedido, terminar o ArrayList ou usar outro método de organização
     public void entregar(int idPedido) {
         boolean entregue = true;
     }
