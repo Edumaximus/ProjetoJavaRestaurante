@@ -41,7 +41,7 @@ public class Funcionario {
         return posicao;
     }
 
-    public void lerInformacoes(int idFuncionario){
+    public static void lerInformacoes(int idFuncionario){
         FileManager.leituraFuncionarios(idFuncionario);
 
 
