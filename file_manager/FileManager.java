@@ -6,57 +6,35 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FileManager throws IOException FileNotFoundException; {
-    
-//código de criação de arquivos básico
-    FileWriter arquivo = new FileWriter("file_manager\\arquivoDefault.txt");
-    PrintWriter gravador = new PrintWriter(arquivo);
+public class FileManager {
 
-    //Criação de diretório e arquivo
-    File dir = new File("file_manager");
-    File arq = new File(dir, "default.txt");
-    arq.createNewFile();
+    public static void main(String[] args) throws IOException {
+        // Criação de diretório e arquivo
+        File dir = new File("file_manager");
+        File arq = new File(dir, "default.txt");
+        arq.createNewFile();
 
-    FileWriter fileWriter = new FileWriter(arq, false);
+        FileWriter fileWriter = new FileWriter(arq, false);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
 
-    PrintWriter printWriter = new PrintWriter(fileWriter);
+        // código para escrever no arquivo
+        printWriter.println("Conteúdo do arquivo default.txt");
+        printWriter.flush();
+        printWriter.close();
 
-    //código de o que colocar no arquivo vai aqui
-
-    printWriter.flush();
-
-    printWriter.close();
-
-//código de leitura de arquivos básico
-
-    /*File dir = new File("C:\\TutorialArquivos");
-    File arq = new File(dir, "User.txt");
-    // Indicamos o arquivo que será lido
-    FileReader fileReader = new FileReader(arq);
-    // Criamos o objeto bufferReader que nos
-    // oferece o método de leitura readLine()
-    BufferedReader bufferedReader = new BufferedReader(fileReader);
-    // String que irá receber cada linha do arquivo
-    String linha = "";
-    // Fazemos um loop linha a linha no arquivo,
-    // enquanto ele seja diferente de null.
-    // O método readLine() devolve a linha na
-    // posicao do loop para a variavel linha.
-    while ( ( linha = bufferedReader.readLine() ) != null) {
-    //Aqui imprimimos a linha
-    System.out.println(linha);
+        // código para ler o arquivo
+        File arquivoLeitura = new File("file_manager\\default.txt");
+        try (Scanner leitor = new Scanner(arquivoLeitura)) {
+            while (leitor.hasNextLine()) {
+                System.out.println(leitor.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+            e.printStackTrace();
+        }
     }
-    //liberamos o fluxo dos objetos ou fechamos o arquivo
-    fileReader.close();
-    bufferedReader.close();*/
-
-    File arquivoLeitura = new File("file_manager\\\\arquivoDefault.txt");
-    Scanner leitor = new Scanner(arquivoLeitura);
-
-    while (leitor.hasNext()){
-        System.out.println(leitor.nextLine());
-    }
-
 }
+
