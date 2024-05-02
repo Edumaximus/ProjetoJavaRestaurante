@@ -16,19 +16,17 @@ public class Pedido {
     public int mesa; // Numero da mesa do cliente
     public boolean entregue; //Status da entrega do pedido
 
-    private List<Produto> itens; // Lista do pedido
+
+    //de preferência criar um construtor sem lista de array, muito complexo pra agora
+    /*private List<Produto> itens; // Lista do pedido
 
     // Construtor da classe Pedido
     public Pedido(int idPedido) {
         this.idPedido = idPedido; 
-        this.itens = new ArrayList<>(); 
-    }
+        this.itens = new ArrayList<>();
+    }*/
 
-    public void entregar(int idPedido) {
-        boolean entregue = true;
-    }
-
-    public void pagar(int idPedidoPagto, Double valor) {
+    /*public void pagar(int idPedidoPagto, Double valor) {
 
         if (valor == this.precoTotal) {
             System.out.println("Pagamento executado!");
@@ -36,5 +34,5 @@ public class Pedido {
         else{
             System.out.println("Valor do pagamento incorreto");
         }
-    }
+    }*/
 }

@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 public class FileManager{
 
-    public static void leituraFuncionarios(int idFuncionario) throws IOException{
+    //A completar.
+    /*public static void leituraFuncionarios(int idFuncionario) throws IOException{
         BufferedReader bufferedReader = new BufferedReader(new FileReader("ProjetoJavaRestaurante\\file_manager\\dadosFuncionario.txt"));
         String linha = "";
 
@@ -25,6 +26,6 @@ public class FileManager{
                 
             }
         }
-    }
+    }*/
 }
 
