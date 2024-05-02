@@ -71,7 +71,12 @@ public class principal {
                 Cardapio prato = new Cardapio();
                 break;
 
-            case "F":
+            case "F" :
+                System.out.println("digite o Id do Funcionário para mais informações");
+                int idFuncionario = scanner.nextInt();
+                Funcionario.lerInformacoes(idFuncionario);
+
+            /*case "F":
                 System.out.println("Digite o Id, Nome, CPF, Salário e Posição do funcionário");
                 int idFuncionario = scanner.nextInt();
                 String nome = scanner.nextLine();
@@ -108,7 +113,7 @@ public class principal {
                 int idFuncionarioDemissao = scanner.nextInt();
                 //também necessita database
                 Funcionario.Demitir(idFuncionarioDemissao);
-                break;
+                break;*/
 
             case "K":
                 FileManager.viewDocs();

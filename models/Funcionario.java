@@ -1,4 +1,7 @@
 package models;
+
+import file_manager.FileManager;
+
 public class Funcionario {
     
     public int idFuncionario; //Indentificacao do funcionario.
@@ -38,7 +41,13 @@ public class Funcionario {
         return posicao;
     }
 
-    public static void baterPonto(int idFuncionario) {
+    public void lerInformacoes(int idFuncionario){
+        FileManager.leituraFuncionarios(idFuncionario);
+
+
+    }
+
+    /*public static void baterPonto(int idFuncionario) {
         if (this.emServico = false) {
             this.emServico = true;
             System.out.println("Turno do funcionário " + this.nome + "iniciado");
@@ -59,7 +68,7 @@ public class Funcionario {
     }
 
     public static void Demitir(int idFuncionario) {
-        /*não sei a função para deletar uma instância de classe, colocar aqui eventualmente*/
+        /*não sei a função para deletar uma instância de classe, colocar aqui eventualmente
         System.out.println("Funcionario "+ this.nome + "demitido.");
-    }
+    }*/
 }
