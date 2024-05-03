@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class FileManager{
 
     //A completar.
-    /*public static void leituraFuncionarios(int idFuncionario) throws IOException{
+    public static void leituraFuncionarios(int idFuncionario) throws IOException{
         BufferedReader bufferedReader = new BufferedReader(new FileReader("ProjetoJavaRestaurante\\file_manager\\dadosFuncionario.txt"));
         String linha = "";
 
@@ -23,9 +23,11 @@ public class FileManager{
                 String posicao = aaa[2];
                 String cpf = aaa[3];
                 Double salario = Double.parseDouble(aaa[4]);
+
+                System.out.println("Nome: "+nome+" Posição: "+posicao+" Documento: "+cpf+" Salário: R$"+salario);
                 
             }
         }
-    }*/
+    }
 }
 

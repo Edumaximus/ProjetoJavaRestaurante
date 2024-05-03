@@ -1,5 +1,6 @@
 package principal;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import file_manager.FileManager;
@@ -11,7 +12,7 @@ import models.Pedido;
 public class principal {
 
     //Criação do método principal
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
      //Menu do sistema
         System.out.println("++++++++++++++++++++++++++++++++++\n");
         System.out.println("Sistema de controle de restaurante\n");
@@ -59,10 +60,10 @@ public class principal {
                 break;
 
             case "E" :
-                //Eu terminarei esse aqui mais tarde
-                /*System.out.println("digite o Id do Funcionário para mais informações");
+            
+                System.out.println("digite o Id do Funcionário para mais informações");
                 int idFuncionario = scanner.nextInt();
-                Funcionario.lerInformacoes(idFuncionario);*/
+                Funcionario.lerInformacoes(idFuncionario);
 
             default:
                 break;
