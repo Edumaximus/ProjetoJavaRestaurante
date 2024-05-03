@@ -1,0 +1,4 @@
+0001, hamburguer
+0002, pizza,
+0003, macarrao
+0004, salada
