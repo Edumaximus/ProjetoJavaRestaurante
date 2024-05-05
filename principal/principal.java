@@ -38,8 +38,11 @@ public class principal {
                 break;
 
             case "B":
-                /*System.out.println("Escreva o Id do prato seguido pela quantidade (pode selecionar mais 3 vezes):\n");
-                Pedido.pedido();*/
+                /*System.out.println("Selecione dois pratos usando o ID do cardápio (Digite 0000 para pular um prato), e depois selecione a mesa\n");
+                int idPrato1 = scanner.nextInt();
+                int idPrato2 = scanner.nextInt();
+                int mesa = scanner.nextInt();
+                Pedido pedido = new Pedido(idPrato1, idPrato2, mesa);*/
                 break;
 
             case "C":
@@ -64,7 +67,7 @@ public class principal {
                 System.out.println("digite o Id do Funcionário para mais informações");
                 int idFuncionario = scanner.nextInt();
                 Funcionario.lerInformacoes(idFuncionario);
-
+                break;
             default:
                 break;
         }

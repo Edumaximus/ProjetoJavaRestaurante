@@ -7,14 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileManager{
 
-    //A completar.
     public static void leituraFuncionarios(int idFuncionario) throws IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("ProjetoJavaRestaurante\\file_manager\\dadosFuncionario.txt"));
+        //Caminho só funciona no meu pc, alterar para o seu se quiser testar
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\dadosFuncionario.txt"));
         String linha = "";
 
         while ((linha = bufferedReader.readLine()) != null){
@@ -31,7 +30,38 @@ public class FileManager{
         }
     }
 
-    public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
+    /*public static Double calculoPreco(int idPrato1, int idPrato2) throws NumberFormatException, IOException{
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt"));
+        String linha = "";
+        Double preco1 = 0.0;
+        Double preco2 = 0.0;
+
+        while ((linha = bufferedReader.readLine()) != null){
+            var aaa = linha.split(",");
+            if(Integer.parseInt(aaa[0].toString()) == idPrato1){
+                preco1 = Double.parseDouble(aaa[3]);
+            }
+        }
+        while ((linha = bufferedReader.readLine()) != null){
+            var bbb = linha.split(",");
+            if(Integer.parseInt(bbb[0].toString()) == idPrato2){
+                preco2 = Double.parseDouble(bbb[3]);
+            }
+        }
+
+        Double precoTotal=preco1+preco2;
+        return precoTotal;
+    }
+
+    public static void salvarPedido(int idPedido, int idPrato1, int idPrato2, Double precoTotal, int mesa) throws IOException {
+        FileWriter fileWriter = new FileWriter("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt");
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        printWriter.println(idPedido+","+idPrato1+","+idPrato2+","+precoTotal+","+mesa);
+        System.out.println("Pedido "+idPedido+" salvo, valor: R$"+precoTotal);
+    }*/
+
+    /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
         // Abre o arquivo existente para leitura e escrita
         FileReader fileReader = new FileReader("cardapio.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -55,7 +85,7 @@ public class FileManager{
             bufferedWriter.close();
 
         System.out.println("Item adicionado com sucesso ao arquivo " + "cardapio.txt");
-    }
+    }*/
 }
 
 

@@ -1,38 +1,24 @@
 package models;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import file_manager.FileManager;
+
 public class Pedido {
+    public static volatile int nextId = 0; 
     public int idPedido; // Identificacao do pedido
     public int idPrato1; // Identificacao do primeiro prato do pedido
-    public int quantPrato1; // Quantidade do primeiro prato do pedido
     public int idPrato2; // Identificacao do segundo prato do pedido
-    public int quantPrato2; // Quantidade do segundo prato do pedido
-    public int idPrato3; // Identificacao do terceiro prato do pedido
-    public int quantPrato3; // Quantidade do terceiro prato do pedido
-    public int idPrato4; // Identificacao do quarto prato do pedido
-    public int quantPrato4; // Quantidade do quarto prato do pedido
     public Double precoTotal; // Preco total do pedido
     public int mesa; // Numero da mesa do cliente
-    public boolean entregue; //Status da entrega do pedido
 
-
-    //de preferência criar um construtor sem lista de array, muito complexo pra agora
-    /*private List<Produto> itens; // Lista do pedido
-
-    // Construtor da classe Pedido
-    public Pedido(int idPedido) {
-        this.idPedido = idPedido; 
-        this.itens = new ArrayList<>();
-    }*/
-
-    /*public void pagar(int idPedidoPagto, Double valor) {
-
-        if (valor == this.precoTotal) {
-            System.out.println("Pagamento executado!");
-        }
-        else{
-            System.out.println("Valor do pagamento incorreto");
-        }
+    /*public Pedido(int idPrato1, int idPrato2, int mesa) throws NumberFormatException, IOException{
+        this.idPedido = nextId++;
+        this.idPrato1 = idPrato1;
+        this.idPrato2 = idPrato2;
+        this.precoTotal = FileManager.calculoPreco(idPrato1, idPrato2);
+        this.mesa = mesa;
+        FileManager.salvarPedido(this.idPedido, this.idPrato1, this.idPrato2,this.precoTotal, this.mesa);
     }*/
 }
