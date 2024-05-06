@@ -14,11 +14,15 @@ public class Pedido {
     public int mesa; // Numero da mesa do cliente
 
     public Pedido(int idPrato1, int idPrato2, int mesa) throws NumberFormatException, IOException{
-        this.idPedido = nextId++;
+        this.idPedido = nextId++;/*FileManager.proxId();*/
         this.idPrato1 = idPrato1;
         this.idPrato2 = idPrato2;
         this.precoTotal = FileManager.calculoPreco(idPrato1, idPrato2);
         this.mesa = mesa;
         FileManager.salvarPedido(this.idPedido, this.idPrato1, this.idPrato2,this.precoTotal, this.mesa);
     }
+
+    /*public static void Pagar(int idPedidoPagto, Double valor) throws NumberFormatException, IOException{
+        FileManager.checarPagto(idPedidoPagto, valor);
+    }*/
 }

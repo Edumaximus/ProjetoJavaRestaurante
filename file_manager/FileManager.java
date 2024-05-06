@@ -24,11 +24,25 @@ public class FileManager{
                 String cpf = aaa[3];
                 Double salario = Double.parseDouble(aaa[4]);
 
-                System.out.println("Nome: "+nome+" Posição: "+posicao+" Documento: "+cpf+" Salário: R$"+salario);
+                System.out.println("Nome: "+nome+" Posição: "+posicao+" Documento: "+cpf+" Salário: R$"+salario+"\n");
                 
             }
         }
     }
+
+    /*public static int proxId() throws IOException{
+        int proxId = 0;
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt"));
+        String linha = "";
+
+        while ((linha = bufferedReader.readLine()) != null){
+            var aaa = linha.split(",");
+            proxId = Integer.parseInt(aaa[0])+1;
+        }
+        
+        return proxId;
+    }*/
 
     public static Double calculoPreco(int idPrato1, int idPrato2) throws NumberFormatException, IOException{
         BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
@@ -52,11 +66,32 @@ public class FileManager{
     public static void salvarPedido(int idPedido, int idPrato1, int idPrato2, Double precoTotal, int mesa) throws IOException {
         FileWriter fileWriter = new FileWriter("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt", true);
         PrintWriter printWriter = new PrintWriter(fileWriter);
-        printWriter.println("\n"+idPedido+","+idPrato1+","+idPrato2+","+precoTotal+","+mesa);
+        printWriter.println(idPedido+","+idPrato1+","+idPrato2+","+precoTotal+","+mesa+"\n");
         printWriter.flush();
         printWriter.close();
-        System.out.println("Pedido "+idPedido+" salvo, valor: R$"+precoTotal);
+        System.out.println("Pedido "+idPedido+" salvo, valor: R$"+precoTotal+"\n");
     }
+
+    /*public static void checarPagto(int idPedidoPagto, Double valor) throws NumberFormatException, IOException{
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt"));
+        String linha = "";
+
+        while ((linha = bufferedReader.readLine()) != null){
+            var aaa = linha.split(",");
+            if(Integer.parseInt(aaa[0].toString()) == idPedidoPagto){
+                if (Double.parseDouble(aaa[3]) == valor) {
+                    System.out.println("Pagamento efetuado com sucesso!");
+                }else if(Double.parseDouble(aaa[3]) < valor){
+                    Double troco;
+                    troco = valor - Double.parseDouble(aaa[3]);
+
+                    System.out.println("Pagamento efetuado com sucesso, troco: R$"+troco);
+                }else{
+                    System.out.println("Pagamento insuficiente, favor tentar novamente.");
+                }
+            }
+        }
+    }*/
 
     /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
         // Abre o arquivo existente para leitura e escrita
