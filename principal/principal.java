@@ -49,10 +49,10 @@ public class principal {
 
                 case 3:
                     //Este método deve checar e executar o pagamento, e gerar um arquivo de recibo usando o filemanager
-                    /*System.out.println("Escreva o ID do pedido a ser pago e o valor coletado: \n");
+                    System.out.println("Escreva o ID do pedido a ser pago e o valor coletado: \n");
                     int idPedidoPagto = scanner.nextInt();
                     Double valor = scanner.nextDouble();
-                    Pedido.Pagar(idPedidoPagto, valor);*/
+                    Pedido.Pagar(idPedidoPagto, valor);
                     break;
 
                 case 4:
