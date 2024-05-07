@@ -25,7 +25,8 @@ public class principal {
             System.out.println("3: Registrar pagamento");
             System.out.println("4: Registrar prato");
             System.out.println("5: Ver informações de funcionário");
-            System.out.println("6: Sair");
+            System.out.println("6: Remover prato do cardápio");
+            System.out.println("7: Sair");
             System.out.println("++++++++++++++++++++++++++++++++++\n");
 
             option = scanner.nextInt();
@@ -65,13 +66,18 @@ public class principal {
                     break;
 
                 case 5 :
-                
                     System.out.println("digite o Id do Funcionário para mais informações");
                     int idFuncionario = scanner.nextInt();
                     Funcionario.lerInformacoes(idFuncionario);
                     break;
 
                 case 6 :
+                    /*System.out.println("Digite o Id do Prato para removê-lo do cardápio");
+                    int idRemocao = scanner.nextInt();
+                    Cardapio.remover(idRemocao);*/
+                    break;
+
+                case 7 :
                     System.out.println("Saindo do programa...");
                     System.exit(0);
                     break;

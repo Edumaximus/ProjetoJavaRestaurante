@@ -6,8 +6,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FileManager{
 
@@ -115,6 +119,42 @@ public class FileManager{
             }
         }
     }
+
+    /*public static void removerPrato(int idRemocao) throws IOException{
+        File inputFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt");
+        File tempFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\tempcardapio.txt");
+        String linha = "";
+
+        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\tempcardapio.txt"));
+
+        while ((linha = reader.readLine()) != null){
+            /* Remove any `possible` leading or trailing whitespaces, 
+               tabs, etc from read file line:       
+            linha = linha.trim();
+            
+               // Skip past blank file lines (if any):
+            if (linha.trim().isEmpty()) {
+                   continue;
+            }
+               
+               /* Split the file data line.
+            String[] aaa = linha.split("\\s*,\\s*");
+            String trechoRemocao = (aaa[0]+","+aaa[1]+","+aaa[2]);
+
+            String lineToRemove = trechoRemocao;
+            String currentLine;
+
+            while((currentLine = reader.readLine()) != null) {
+                // trim newline when comparing with lineToRemove
+                String trimmedLine = currentLine.trim();
+                if(trimmedLine.equals(lineToRemove)) continue;
+                writer.write(currentLine + System.getProperty("line.separator"));
+            } 
+            boolean successful = tempFile.renameTo(inputFile);
+        }
+
+    }*/
 
     /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
         // Abre o arquivo existente para leitura e escrita

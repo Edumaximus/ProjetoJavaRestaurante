@@ -1,6 +1,9 @@
 package models;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import file_manager.FileManager;
 
 public class Cardapio{
     public int idPrato; // identificacao do prato
@@ -13,6 +16,10 @@ public class Cardapio{
     this.prato = prato;
     this.preco = preco;
     }
+
+    /*public static void remover(int idRemocao) throws IOException{
+        FileManager.removerPrato(idRemocao);
+    }*/
 
     public int getIdPrato(){
         return this.idPrato;
