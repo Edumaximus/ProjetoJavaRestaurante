@@ -120,67 +120,36 @@ public class FileManager{
         }
     }
 
-    /*public static void removerPrato(int idRemocao) throws IOException{
+    public static void deleteMenuItem(int id) {
         File inputFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt");
         File tempFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\tempcardapio.txt");
-        String linha = "";
 
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\tempcardapio.txt"));
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
-        while ((linha = reader.readLine()) != null){
-            /* Remove any `possible` leading or trailing whitespaces, 
-               tabs, etc from read file line:       
-            linha = linha.trim();
-            
-               // Skip past blank file lines (if any):
-            if (linha.trim().isEmpty()) {
-                   continue;
-            }
-               
-               /* Split the file data line.
-            String[] aaa = linha.split("\\s*,\\s*");
-            String trechoRemocao = (aaa[0]+","+aaa[1]+","+aaa[2]);
-
-            String lineToRemove = trechoRemocao;
+            String lineToRemove = String.format("%04d,", id);
             String currentLine;
 
-            while((currentLine = reader.readLine()) != null) {
-                // trim newline when comparing with lineToRemove
-                String trimmedLine = currentLine.trim();
-                if(trimmedLine.equals(lineToRemove)) continue;
-                writer.write(currentLine + System.getProperty("line.separator"));
-            } 
-            boolean successful = tempFile.renameTo(inputFile);
+            while ((currentLine = reader.readLine()) != null) {
+                // Se a linha atual não começa com o ID do prato a ser removido, escreve no arquivo temporário
+                if (!currentLine.startsWith(lineToRemove)) {
+                    writer.write(currentLine + System.getProperty("line.separator"));
+                }
+            }
+
+            writer.close();
+            reader.close();
+
+            // Substitui o arquivo original pelo arquivo temporário
+            inputFile.delete();
+            tempFile.renameTo(inputFile);
+
+            System.out.println("Prato removido com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-    }*/
-
-    /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
-        // Abre o arquivo existente para leitura e escrita
-        FileReader fileReader = new FileReader("cardapio.txt");
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        // Cria um FileWriter para escrever no final do arquivo
-        FileWriter fileWriter = new FileWriter("cardapio.txt", true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-        // Lê o arquivo e imprime os itens existentes
-        String linha;
-        while ((linha = bufferedReader.readLine()) != null) {
-            System.out.println(linha);
-        }
-
-        // Adiciona o novo item ao arquivo
-        bufferedWriter.write(novoItem);
-            bufferedWriter.newLine();
-
-        // Fecha 
-        bufferedReader.close();
-            bufferedWriter.close();
-
-        System.out.println("Item adicionado com sucesso ao arquivo " + "cardapio.txt");
-    }*/
+    }
 }
 
 

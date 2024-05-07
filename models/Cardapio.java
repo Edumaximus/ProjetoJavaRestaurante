@@ -17,9 +17,9 @@ public class Cardapio{
     this.preco = preco;
     }
 
-    /*public static void remover(int idRemocao) throws IOException{
-        FileManager.removerPrato(idRemocao);
-    }*/
+    public static void remover(int idRemocao) throws IOException{
+        FileManager.deleteMenuItem(idRemocao);
+    }
 
     public int getIdPrato(){
         return this.idPrato;

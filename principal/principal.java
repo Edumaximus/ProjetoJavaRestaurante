@@ -72,9 +72,9 @@ public class principal {
                     break;
 
                 case 6 :
-                    /*System.out.println("Digite o Id do Prato para removê-lo do cardápio");
+                    System.out.println("Digite o Id do Prato para removê-lo do cardápio");
                     int idRemocao = scanner.nextInt();
-                    Cardapio.remover(idRemocao);*/
+                    Cardapio.remover(idRemocao);
                     break;
 
                 case 7 :
