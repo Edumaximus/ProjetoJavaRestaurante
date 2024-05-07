@@ -1,1 +1,2 @@
 0001,Joao da Silva,Gerente,123.456.879-21,1500
+0002,Pedro Zacarias da Rocha,Cozinheiro,234.567.891-23,1350

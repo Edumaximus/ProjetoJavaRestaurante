@@ -1,7 +1,6 @@
 package models;
 
 import java.io.IOException;
-
 import file_manager.FileManager;
 
 public class Funcionario {
@@ -43,6 +42,7 @@ public class Funcionario {
         return posicao;
     }
 
+    /*Método para ver as informações de um funcionário que você sabe o id*/
     public static void lerInformacoes(int idFuncionario) throws IOException{
         FileManager.leituraFuncionarios(idFuncionario);
     }

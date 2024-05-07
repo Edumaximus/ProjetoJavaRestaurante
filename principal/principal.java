@@ -2,7 +2,6 @@ package principal;
 
 import java.io.IOException;
 import java.util.Scanner;
-
 import file_manager.FileManager;
 import models.Cardapio;
 import models.Cliente;
@@ -16,6 +15,7 @@ public class principal {
         
         Scanner scanner = new Scanner(System.in);
 
+        //Sistema de repetição do menu principal depois de executar métodos
         int option;
         while (true) {
             System.out.println("++++++++++++++++++++++++++++++++++");
@@ -33,7 +33,7 @@ public class principal {
 
             option = scanner.nextInt();
 
-            //Código pra chamar os métodos presentes nas classes (métodos ainda por fazer)
+            //Código pra chamar os métodos presentes nas classes
             switch (option) {
                 case 1:
                     System.out.println("Escreva o nome e a mesa a ocupar:\n");
@@ -51,7 +51,6 @@ public class principal {
                     break;
 
                 case 3:
-                    //Este método deve checar e executar o pagamento, e gerar um arquivo de recibo usando o filemanager
                     System.out.println("Escreva o ID do pedido a ser pago e o valor coletado: \n");
                     int idPedidoPagto = scanner.nextInt();
                     Double valor = scanner.nextDouble();
