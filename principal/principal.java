@@ -34,7 +34,7 @@ public class principal {
             switch (option) {
                 case 1:
                     System.out.println("Escreva o nome e a mesa a ocupar:\n");
-                    String nome = scanner.nextLine();
+                    String nome = scanner.next();
                     int numeroMesa = scanner.nextInt();
                     Cliente cliente = new Cliente(nome, numeroMesa);
                     break;

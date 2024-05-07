@@ -10,6 +10,6 @@ public class Cliente {
     public Cliente(String nome, int numeroMesa) {
         this.nome = nome;
         this.numeroMesa = numeroMesa;
-        System.out.println("Cliente "+this.nome+"registrado(a) na mesa"+this.numeroMesa+"\n");
+        System.out.println("Cliente "+this.nome+" registrado(a) na mesa "+this.numeroMesa+"\n");
     }
 }
