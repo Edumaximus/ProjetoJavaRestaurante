@@ -212,4 +212,30 @@ public class FileManager{
         }
         System.out.println("\n");
     }
+
+    /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
+        // Abre o arquivo existente para leitura e escrita
+        FileReader fileReader = new FileReader("cardapio.txt");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        // Cria um FileWriter para escrever no final do arquivo
+        FileWriter fileWriter = new FileWriter("cardapio.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+        // Lê o arquivo e imprime os itens existentes
+        String linha;
+        while ((linha = bufferedReader.readLine()) != null) {
+            System.out.println(linha);
+        }
+
+        // Adiciona o novo item ao arquivo
+        bufferedWriter.write(novoItem);
+            bufferedWriter.newLine();
+
+        // Fecha 
+        bufferedReader.close();
+            bufferedWriter.close();
+
+        System.out.println("Item adicionado com sucesso ao arquivo " + "cardapio.txt");
+    }*/
 }
