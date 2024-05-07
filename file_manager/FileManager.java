@@ -9,6 +9,8 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -145,10 +147,56 @@ public class FileManager{
             inputFile.delete();
             tempFile.renameTo(inputFile);
 
-            System.out.println("Prato removido com sucesso!");
+            System.out.println("Prato removido com sucesso!\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void lerPratos(){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length >= 2) {
+                    String name = parts[1];
+                    System.out.println(name);
+                }
+            }
+            System.out.println("\n");
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void lerPratosAlfabetica() {
+        ArrayList<String> names = new ArrayList<>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length >= 2) {
+                    String name = parts[1];
+                    names.add(name);
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Collections.sort(names); // Ordena os nomes em ordem alfabética
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+        System.out.println("\n");
     }
 }
 

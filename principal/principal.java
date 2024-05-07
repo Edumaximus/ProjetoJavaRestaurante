@@ -26,7 +26,9 @@ public class principal {
             System.out.println("4: Registrar prato");
             System.out.println("5: Ver informações de funcionário");
             System.out.println("6: Remover prato do cardápio");
-            System.out.println("7: Sair");
+            System.out.println("7: Checar lista de nomes de pratos");
+            System.out.println("8: Checar lista de nomes de pratos em ordem alfabética");
+            System.out.println("9: Sair");
             System.out.println("++++++++++++++++++++++++++++++++++\n");
 
             option = scanner.nextInt();
@@ -78,6 +80,14 @@ public class principal {
                     break;
 
                 case 7 :
+                    FileManager.lerPratos();
+                    break;
+
+                case 8 :
+                    FileManager.lerPratosAlfabetica();
+                    break;
+
+                case 9 :
                     System.out.println("Saindo do programa...");
                     System.exit(0);
                     break;
