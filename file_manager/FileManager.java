@@ -213,6 +213,31 @@ public class FileManager{
         System.out.println("\n");
     }
 
+    //codigo para adicionar novo item ao cardapio
+    public void adicionarItem(String novoItem) {
+        // Cria um novo arquivo temporário para escrever o novo item
+        File tempFile = new File("file_manager/tempcardapio.txt");
+
+        try {
+            // Cria um FileWriter para escrever no arquivo temporário
+            FileWriter fileWriter = new FileWriter(tempFile, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            // Escreve o novo item no arquivo temporário
+            bufferedWriter.write(novoItem);
+            bufferedWriter.newLine();
+
+            // Fecha os escritores
+            bufferedWriter.close();
+            fileWriter.close();
+
+            // Imprime uma mensagem de sucesso
+            System.out.println("Item adicionado com sucesso ao arquivo cardapio.txt");
+        } catch (IOException e) {
+            // Em caso de erro, imprime o stack trace
+            e.printStackTrace();
+        }
+    }
     /*public void adicionarItem(String novoItem, String cardapio.txt) throws IOException {
         // Abre o arquivo existente para leitura e escrita
         FileReader fileReader = new FileReader("cardapio.txt");
