@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,9 +18,16 @@ import java.util.stream.Collectors;
 
 public class FileManager{
 
+    private static final String BASE_DIRECTORY = "ProjetoJavaRestaurante";
+    private String filePath;
+
+    public FileManager(String relativeFilePath) {
+        this.filePath = Paths.get(BASE_DIRECTORY, relativeFilePath).toString();
+    }
+
     public static void leituraFuncionarios(int idFuncionario) throws IOException{
         //Caminho só funciona no meu pc, alterar para o seu se quiser testar
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\dadosFuncionario.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("file_manager/dadosFuncionario.txt"));
         String linha = "";
 
         while ((linha = bufferedReader.readLine()) != null){
@@ -39,7 +47,7 @@ public class FileManager{
     public static int proxId() throws IOException{
         int proxId = 0;
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("file_manager/pedidos.txt"));
         String linha = "";
 
         while ((linha = bufferedReader.readLine()) != null){
@@ -63,7 +71,7 @@ public class FileManager{
     }
 
     public static Double calculoPreco(int idPrato1, int idPrato2) throws NumberFormatException, IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("file_manager/cardapio.txt"));
         String linha = "";
         Double preco1 = 0.0;
         Double preco2 = 0.0;
@@ -82,7 +90,7 @@ public class FileManager{
     }
 
     public static void salvarPedido(int idPedido, int idPrato1, int idPrato2, Double precoTotal, int mesa) throws IOException {
-        FileWriter fileWriter = new FileWriter("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt", true);
+        FileWriter fileWriter = new FileWriter("file_manager/pedidos.txt", true);
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println(idPedido+","+idPrato1+","+idPrato2+","+precoTotal+","+mesa+"\n");
         printWriter.flush();
@@ -91,7 +99,7 @@ public class FileManager{
     }
 
     public static void checarPagto(int idPedidoPagto, Double valor) throws NumberFormatException, IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\pedidos.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("file_manager/pedidos.txt"));
         String linha = "";
 
         while ((linha = bufferedReader.readLine()) != null){
@@ -123,8 +131,8 @@ public class FileManager{
     }
 
     public static void deleteMenuItem(int id) {
-        File inputFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt");
-        File tempFile = new File("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\tempcardapio.txt");
+        File inputFile = new File("file_manager/cardapio.txt");
+        File tempFile = new File("file_manager/tempcardapio.txt");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -155,7 +163,7 @@ public class FileManager{
 
     public static void lerPratos(){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("file_manager/cardapio.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
@@ -177,7 +185,7 @@ public class FileManager{
         ArrayList<String> names = new ArrayList<>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\eduar\\Desktop\\Análise e desenvolvimento de sistemas\\3º Semestre\\Desenvolvimento de software\\Trabalhos\\ProjetoJavaRestaurante\\file_manager\\cardapio.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("file_manager/cardapio.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
