@@ -23,7 +23,6 @@ public class principal {
             System.out.println("1: Registrar cliente");
             System.out.println("2: Registrar pedido");
             System.out.println("3: Registrar pagamento");
-            System.out.println("4: Registrar prato");
             System.out.println("5: Ver informações de funcionário");
             System.out.println("6: Remover prato do cardápio");
             System.out.println("7: Checar lista de nomes de pratos");
@@ -55,33 +54,6 @@ public class principal {
                     int idPedidoPagto = scanner.nextInt();
                     Double valor = scanner.nextDouble();
                     Pedido.Pagar(idPedidoPagto, valor);
-                    break;
-
-                case 4:
-                  Scanner input = new Scanner(System.in);
-                    try {
-                        System.out.println("Digite o id do novo prato:");
-                        int idPrato = Integer.parseInt(input.nextLine()); // Lê a linha inteira e converte para int
-
-                        System.out.println("Digite o nome do novo prato:");
-                        String nomePrato = input.nextLine(); // Lê a linha inteira
-
-                        System.out.println("Digite o preço do novo prato:");
-                        double precoPrato = Double.parseDouble(input.nextLine()); // Lê a linha inteira e converte para double
-
-                        // Crie uma representação do novo prato como uma string
-                        String novoItem = String.format("%04d,%s,%.2f", idPrato, nomePrato, precoPrato);
-
-                        // Crie uma instância da classe FileManager
-                        FileManager fileManager = new FileManager("");
-
-                        // Chame o método adicionarItem para adicionar o novo prato ao cardápio
-                        fileManager.adicionarItem(novoItem);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Formato inválido! Certifique-se de inserir um número válido para o id e o preço.");
-                    } finally {
-                        input.close();
-                    }
                     break;
 
                 case 5 :
